@@ -365,6 +365,10 @@ proxy-groups:
       - 韩国节点
       - 地区选择
       - 手动选择
+  - name: 中继选择
+    icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/Final.png
+    type: select
+    include-all: true
   - name: 全球直连
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Direct.png
     type: select
