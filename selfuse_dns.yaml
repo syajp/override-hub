@@ -6,31 +6,6 @@ global-client-fingerprint: chrome
 profile:
     store-selected: true
     store-fake-ip: true
-sniffer:
-    enable: true
-    sniff:
-        HTTP:
-            ports: [80, 8080-8880]
-            override-destination: true
-        TLS:
-            ports: [443, 8443]
-        QUIC:
-            ports: [443, 8443]
-    skip-domain:
-        - "Mijia Cloud"
-        - dlg.io.mi.com
-        - "+.push.apple.com"
-tun:
-    enable: true
-    stack: system
-    device: mihomo
-    dns-hijack:
-        - any:53
-        - tcp://any:53
-    auto-route: true
-    auto-detect-interface: true
-    strict-route: true
-    endpoint-independent-nat: true
 dns:
     enable: true
     listen: 0.0.0.0:53
@@ -187,78 +162,43 @@ proxy-groups:
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Proxy.png
     type: select
     proxies:
-      - 自动选择
-      - 故障转移
       - 手动切换
+      - 手动选择
       - 落地节点
+      - 香港节点
+      - 台湾节点
+      - 狮城节点
+      - 日本节点
+      - 美国节点
+      - 韩国节点
       - DIRECT
-    url: 'http://www.google.com/generate_204'
-    interval: 300
-    timeout: 5000
-    max-failed-times: 2
-  - name: 故障转移
-    icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Bypass.png
-    type: fallback
-    lazy: false
-    proxies:
-      - 故障转移首选
-      - 故障转移次选
-      - 落地节点
-      - 省流节点
-      - 高级节点
-      - 自动选择
-    url: 'http://www.google.com/generate_204'
-    interval: 300
-    timeout: 5000
-    max-failed-times: 2
-  - name: 手动切换
-    icon: https://testingcf.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/select.png
-    include-all: true
-    type: select
-    url: 'https://cp.cloudflare.com/generate_204'
-    interval: 300
-    timeout: 5000
-    max-failed-times: 2
-  - name: 故障转移首选
-    icon: https://testingcf.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/select.png
-    include-all: true
-    type: select
-    url: 'https://cp.cloudflare.com/generate_204'
-  - name: 故障转移次选
-    icon: https://testingcf.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/select.png
-    include-all: true
-    type: select
-    url: 'https://cp.cloudflare.com/generate_204'
   - name: 落地节点
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Lab.png
     include-all: true
     filter: (落地|家宽|自建)
     type: select
-    url: 'https://cp.cloudflare.com/generate_204'
-  - name: 自动选择
+  - name: 手动切换
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Auto.png
-    type: url-test
-    lazy: false
+    type: select
     proxies:
+      - 手动选择
       - 香港节点
       - 台湾节点
       - 狮城节点
       - 日本节点
       - 美国节点
       - 韩国节点
-    url: 'http://www.google.com/generate_204'
-    interval: 300
-    tolerance: 50
-    timeout: 5000
-    max-failed-times: 2
+  - name: 手动选择
+    icon: https://testingcf.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/select.png
+    include-all: true
+    type: select
   - name: 电报消息
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Telegram.png
     type: select
     proxies:
       - 节点选择
-      - 自动选择
+      - 手动选择
       - 省流节点
-      - 故障转移
       - 狮城节点
       - 香港节点
       - 台湾节点
@@ -267,15 +207,12 @@ proxy-groups:
       - 韩国节点
       - 手动切换
       - DIRECT
-    url: 'https://cp.cloudflare.com/generate_204'
   - name: OpenAi
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Bot.png
     type: select
     proxies:
       - 节点选择
-      - 自动选择
       - 省流节点
-      - 故障转移
       - 狮城节点
       - 香港节点
       - 台湾节点
@@ -284,16 +221,14 @@ proxy-groups:
       - 韩国节点
       - 落地节点
       - 手动切换
+      - 手动选择
       - DIRECT
-    url: 'https://cp.cloudflare.com/generate_204'
   - name: 油管视频
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/YouTube.png
     type: select
     proxies:
       - 节点选择
-      - 自动选择
       - 省流节点
-      - 故障转移
       - 狮城节点
       - 香港节点
       - 台湾节点
@@ -302,8 +237,8 @@ proxy-groups:
       - 韩国节点
       - 落地节点
       - 手动切换
+      - 手动选择
       - DIRECT
-    url: 'https://cp.cloudflare.com/generate_204'
   - name: 巴哈姆特
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Bahamut.png
     type: select
@@ -312,8 +247,8 @@ proxy-groups:
       - 落地节点
       - 节点选择
       - 手动切换
+      - 手动选择
       - DIRECT
-    url: 'https://cp.cloudflare.com/generate_204'
   - name: 哔哩哔哩
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/bilibili.png
     type: select
@@ -322,15 +257,12 @@ proxy-groups:
       - 台湾节点
       - 香港节点
       - 落地节点
-    url: 'https://cp.cloudflare.com/generate_204'
   - name: 国外媒体
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/ForeignMedia.png
     type: select
     proxies:
       - 节点选择
-      - 自动选择
       - 省流节点
-      - 故障转移
       - 香港节点
       - 台湾节点
       - 狮城节点
@@ -339,15 +271,15 @@ proxy-groups:
       - 韩国节点
       - 落地节点
       - 手动切换
+      - 手动选择
       - DIRECT
-    url: 'https://cp.cloudflare.com/generate_204'
   - name: 国内媒体
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/DomesticMedia.png
     type: select
     proxies:
       - DIRECT
       - 手动切换
-    url: 'https://cp.cloudflare.com/generate_204'
+      - 手动选择
   - name: 谷歌FCM
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Google_Search.png
     type: select
@@ -361,7 +293,7 @@ proxy-groups:
       - 日本节点
       - 韩国节点
       - 手动切换
-    url: 'https://cp.cloudflare.com/generate_204'
+      - 手动选择
   - name: 微软Bing
     icon: https://testingcf.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/bing.png
     type: select
@@ -375,7 +307,7 @@ proxy-groups:
       - 日本节点
       - 韩国节点
       - 手动切换
-    url: 'https://cp.cloudflare.com/generate_204'
+      - 手动选择
   - name: 微软云盘
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/OneDrive.png
     type: select
@@ -390,7 +322,7 @@ proxy-groups:
       - 日本节点
       - 韩国节点
       - 手动切换
-    url: 'https://cp.cloudflare.com/generate_204'
+      - 手动选择
   - name: 微软服务
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Microsoft.png
     type: select
@@ -404,7 +336,7 @@ proxy-groups:
       - 日本节点
       - 韩国节点
       - 手动切换
-    url: 'https://cp.cloudflare.com/generate_204'
+      - 手动选择
   - name: 苹果服务
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Apple.png
     type: select
@@ -418,7 +350,7 @@ proxy-groups:
       - 日本节点
       - 韩国节点
       - 手动切换
-    url: 'https://cp.cloudflare.com/generate_204'
+      - 手动选择
   - name: 游戏平台
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Game.png
     type: select
@@ -432,14 +364,13 @@ proxy-groups:
       - 日本节点
       - 韩国节点
       - 手动切换
-    url: 'https://cp.cloudflare.com/generate_204'
+      - 手动选择
   - name: 全球直连
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Direct.png
     type: select
     proxies:
       - DIRECT
-    hidden: true
-    url: 'http://connectivitycheck.platform.hicloud.com/generate_204'
+      - 手动选择
   - name: 广告拦截
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/AdBlack.png
     type: select
@@ -457,11 +388,9 @@ proxy-groups:
     type: select
     proxies:
       - 节点选择
-      - 自动选择
-      - 故障转移
       - 手动切换
+      - 手动选择
       - DIRECT
-    url: 'https://cp.cloudflare.com/generate_204'
   - name: 香港节点
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png
     include-all: true
@@ -495,7 +424,7 @@ proxy-groups:
   - name: 省流节点
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Available_1.png
     include-all: true
-    filter: ^(?=.*((?i)(\s|-)0\.[0-9](×|x|X)|低倍率|省流|大流量(\d+)?\b))(?!.*((?i)(\s|-)(([1-9](\.\d+)?)(×|x|X))|落地|家宽|自建|回国|校园|游戏|🎮|(\b(GAME)(\d+)?\b))).*$
+    filter: ^(?=.*((?i)(\s|-)0\.[0-9](×|x|X)|低倍率|省流|大流量(\d+)?\b))(?!.*((?i)(\s|-)(([1-9](\.\d+)?)(×|x|X))|落地|家宽|自建|实验性|校园|游戏|🎮|(\b(GAME)(\d+)?\b))).*$
     type: select
   - name: 高级节点
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/IEPL.png
