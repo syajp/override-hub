@@ -643,6 +643,8 @@ rule-providers:
     type: http
 
 rules:
+  - "DOMAIN-KEYWORD,18comic,HK"
+  - "DOMAIN-SUFFIX,micu.hk,全球直连"
   - "RULE-SET,LocalAreaNetwork,全球直连"
   - "RULE-SET,UnBan,全球直连"
   - "RULE-SET,BanAD,广告拦截"
