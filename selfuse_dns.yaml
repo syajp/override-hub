@@ -559,9 +559,6 @@ rule-providers:
 rules:
   - "DOMAIN-KEYWORD,18comic,香港节点"
   - "DOMAIN-SUFFIX,micu.hk,全球直连"
-  - "RULE-SET,UnBan,全球直连"
-  - "RULE-SET,BanAD,广告拦截"
-  - "RULE-SET,BanProgramAD,应用净化"
   - "RULE-SET,Google,油管视频"
   - "RULE-SET,GoogleFCM,谷歌FCM"
   - "RULE-SET,SteamCN,全球直连"
