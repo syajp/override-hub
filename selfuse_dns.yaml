@@ -400,7 +400,7 @@ rule-providers:
 
 rules:
   - "DOMAIN-KEYWORD,18comic,香港节点"
-  - "DOMAIN-SUFFIX,micu.hk,全球直连"
+  - "DOMAIN-SUFFIX,micu.hk,DIRECT"
   - "RULE-SET,Google,油管视频"
   - "RULE-SET,GoogleFCM,谷歌FCM"
   - "RULE-SET,SteamCN,全球直连"
@@ -416,7 +416,6 @@ rules:
   - "RULE-SET,Bilibili,哔哩哔哩"
   - "RULE-SET,ChinaMedia,国内媒体"
   - "RULE-SET,ProxyMedia,国外媒体"
-  - "RULE-SET,China,全球直连"
   - "GEOIP,CN,DIRECT,no-resolve"
   - "RULE-SET,Download,全球直连"
   - "DOMAIN-SUFFIX,local,DIRECT"
