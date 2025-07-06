@@ -375,7 +375,7 @@ proxy-groups:
   - name: 高级节点
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/IEPL.png
     include-all: true
-    filter: ^(?=.*((?i)(\s|-)(([1-9](\.\d+)?)(×|x|X))|专线|专用|高级|直连|急速|高倍率|AIA|CTM|CC|iepl|iplc|aia|ctm|cc|AC(\d+)?\b))(?!.*((?i)(\s|-)0\.[0-9](×|x|X)|低倍率|省流|大流量|落地|家宽|自建|回国|校园|游戏|🎮|(\b(GAME)(\d+)?\b))).*$
+    filter: ^(?=.*((?i)(\s|-)(([1-9](\.\d+)?)(×|x|X))|专线|专用|高级|直连|急速|高倍率|AIA|CTM|CC|aia|ctm|cc|AC(\d+)?\b))(?!.*((?i)(\s|-)0\.[0-9](×|x|X)|低倍率|省流|大流量|落地|家宽|自建|回国|校园|游戏|🎮|(\b(GAME)(\d+)?\b))).*$
     type: select
 
 rule-providers:
