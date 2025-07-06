@@ -268,30 +268,6 @@ proxy-groups:
       - 香港节点
       - 落地节点
       - DIRECT
-  - name: 国外媒体
-    icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/ForeignMedia.png
-    type: select
-    proxies:
-      - 节点选择
-      - 省流节点
-      - 香港节点
-      - 台湾节点
-      - 狮城节点
-      - 日本节点
-      - 美国节点
-      - 韩国节点
-      - 落地节点
-      - 地区选择
-      - 手动选择
-      - DIRECT
-  - name: 国内媒体
-    icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/DomesticMedia.png
-    type: select
-    proxies:
-      - 地区选择
-      - 落地节点
-      - 手动选择
-      - DIRECT
   - name: 谷歌FCM
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Google_Search.png
     type: select
@@ -306,21 +282,6 @@ proxy-groups:
       - 韩国节点
       - 落地节点
       - 手动选择
-  - name: 微软云盘
-    icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/OneDrive.png
-    type: select
-    proxies:
-      - 节点选择
-      - 省流节点
-      - 美国节点
-      - 香港节点
-      - 台湾节点
-      - 狮城节点
-      - 日本节点
-      - 韩国节点
-      - 地区选择
-      - 手动选择
-      - DIRECT
   - name: 微软服务
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Microsoft.png
     type: select
@@ -332,7 +293,7 @@ proxy-groups:
       - 狮城节点
       - 日本节点
       - 韩国节点
-      - 地区选择
+      - 落地节点
       - 手动选择
       - DIRECT
   - name: 苹果服务
@@ -361,19 +322,12 @@ proxy-groups:
       - 狮城节点
       - 日本节点
       - 韩国节点
-      - 地区选择
+      - 落地节点
       - 手动选择
   - name: 中继选择
     icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/Final.png
     type: select
     include-all: true
-  - name: 全球直连
-    icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Direct.png
-    type: select
-    proxies:
-      - DIRECT
-      - 手动选择
-      - 落地节点
   - name: 漏网之鱼
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Final.png
     type: select
@@ -421,7 +375,7 @@ proxy-groups:
   - name: 高级节点
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/IEPL.png
     include-all: true
-    filter: ^(?=.*((?i)(\s|-)(([1-9](\.\d+)?)(×|x|X))|专线|专用|高级|直连|急速|高倍率|IEPL|IPLC|AIA|CTM|CC|iepl|iplc|aia|ctm|cc|AC(\d+)?\b))(?!.*((?i)(\s|-)0\.[0-9](×|x|X)|低倍率|省流|大流量|落地|家宽|自建|回国|校园|游戏|🎮|(\b(GAME)(\d+)?\b))).*$
+    filter: ^(?=.*((?i)(\s|-)(([1-9](\.\d+)?)(×|x|X))|专线|专用|高级|直连|急速|高倍率|AIA|CTM|CC|iepl|iplc|aia|ctm|cc|AC(\d+)?\b))(?!.*((?i)(\s|-)0\.[0-9](×|x|X)|低倍率|省流|大流量|落地|家宽|自建|回国|校园|游戏|🎮|(\b(GAME)(\d+)?\b))).*$
     type: select
 
 rule-providers:
@@ -435,13 +389,6 @@ rule-providers:
   SteamCN:
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/SteamCN/SteamCN.list
     path: ./ruleset/SteamCN.list
-    behavior: classical
-    interval: 86400
-    format: text
-    type: http
-  OneDrive:
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OneDrive/OneDrive.list
-    path: ./ruleset/OneDrive.list
     behavior: classical
     interval: 86400
     format: text
@@ -481,6 +428,13 @@ rule-providers:
     interval: 86400
     format: text
     type: http
+  YouTube:
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.list
+    path: ./ruleset/YouTube.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
   Google:
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.list
     path: ./ruleset/Google.list
@@ -488,13 +442,6 @@ rule-providers:
     interval: 86400
     format: text
     type: http    
-  YouTube:
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/YouTube/YouTube.list
-    path: ./ruleset/YouTube.list
-    behavior: classical
-    interval: 86400
-    format: text
-    type: http
   Bahamut:
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Bahamut/Bahamut.list
     path: ./ruleset/Bahamut.list
@@ -502,30 +449,9 @@ rule-providers:
     interval: 86400
     format: text
     type: http
-  BilibiliHMT:
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/BiliBiliIntl/BiliBiliIntl.list
-    path: ./ruleset/BilibiliHMT.list
-    behavior: classical
-    interval: 86400
-    format: text
-    type: http
   Bilibili:
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BiliBili/BiliBili.list
     path: ./ruleset/Bilibili.list
-    behavior: classical
-    interval: 86400
-    format: text
-    type: http
-  ChinaMedia:
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMedia/ChinaMedia.list
-    path: ./ruleset/ChinaMedia.list
-    behavior: classical
-    interval: 86400
-    format: text
-    type: http
-  ProxyMedia:
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GlobalMedia/GlobalMedia.list
-    path: ./ruleset/ProxyMedia.list
     behavior: classical
     interval: 86400
     format: text
@@ -543,8 +469,7 @@ rules:
   - "DOMAIN-SUFFIX,micu.hk,DIRECT"
   - "RULE-SET,Google,油管视频"
   - "RULE-SET,GoogleFCM,谷歌FCM"
-  - "RULE-SET,SteamCN,全球直连"
-  - "RULE-SET,OneDrive,微软云盘"
+  - "RULE-SET,SteamCN,DIRECT"
   - "RULE-SET,Microsoft,微软服务"
   - "RULE-SET,Apple,苹果服务"
   - "RULE-SET,Telegram,电报消息"
@@ -552,12 +477,9 @@ rules:
   - "RULE-SET,Steam,Steam"
   - "RULE-SET,YouTube,油管视频"
   - "RULE-SET,Bahamut,巴哈姆特"
-  - "RULE-SET,BilibiliHMT,哔哩哔哩"
   - "RULE-SET,Bilibili,哔哩哔哩"
-  - "RULE-SET,ChinaMedia,国内媒体"
-  - "RULE-SET,ProxyMedia,国外媒体"
   - "GEOIP,CN,DIRECT,no-resolve"
-  - "RULE-SET,Download,全球直连"
+  - "RULE-SET,Download,DIRECT"
   - "DOMAIN-SUFFIX,local,DIRECT"
   - "IP-CIDR,192.168.0.0/16,DIRECT,no-resolve"
   - "IP-CIDR,10.0.0.0/8,DIRECT,no-resolve"
