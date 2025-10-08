@@ -346,8 +346,10 @@ rule-providers:
     type: http
 
 rules:
-  - "DOMAIN-KEYWORD,18comic,香港节点"
+  - "DOMAIN-KEYWORD,18comic,手动选择"
+  - "DOMAIN-KEYWORD,jmcomic,手动选择"
   - "DOMAIN-SUFFIX,micu.hk,DIRECT"
+  - "DOMAIN-SUFFIX,as174.de,手动选择"
   - "RULE-SET,Google,油管视频"
   - "RULE-SET,GoogleFCM,谷歌FCM"
   - "RULE-SET,SteamCN,DIRECT"
