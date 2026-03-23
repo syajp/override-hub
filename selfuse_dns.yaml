@@ -29,7 +29,6 @@ dns:
     - "*.sktswe.net"
     - rtc.goodfone.co.kr
     - "*.chattti.com"
-  respect-rules: false
   nameserver:
     - tls://223.5.5.5:853
     - tls://223.6.6.6:853
