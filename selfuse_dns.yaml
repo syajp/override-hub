@@ -277,20 +277,6 @@ rule-providers:
     interval: 86400
     format: text
     type: http
-  Custom_Proxy_Domain:
-    url: https://testingcf.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Proxy_Domain.yaml
-    path: ./ruleset/Custom_Proxy_Domain.list
-    behavior: domain
-    interval: 86400
-    format: text
-    type: http
-  Custom_Proxy_Classical_IP:
-    url: https://testingcf.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Proxy_Classical_IP.yaml
-    path: ./ruleset/Custom_Proxy_Classical_IP.list
-    behavior: classical
-    interval: 86400
-    format: text
-    type: http
   GoogleFCM:
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GoogleFCM/GoogleFCM.list
     path: ./ruleset/GoogleFCM.list
@@ -392,8 +378,6 @@ rules:
   - "GEOIP,private,DIRECT,no-resolve"
   - "RULE-SET,Custom_Direct_Domain,DIRECT"
   - "RULE-SET,Custom_Direct_Classical_IP,DIRECT"
-  - "RULE-SET,Custom_Proxy_Domain.yaml,节点选择"
-  - "RULE-SET,Custom_Proxy_Classical_IP,节点选择"
   - "RULE-SET,GoogleFCM,谷歌FCM"
   - "RULE-SET,YouTube,油管视频"
   - "RULE-SET,Google,节点选择"
