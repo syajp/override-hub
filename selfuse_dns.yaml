@@ -254,7 +254,7 @@ rule-providers:
     format: text
     type: http
   Custom_Direct_Classical_IP:
-    url: https://testingcf.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Direct_Domain.yaml
+    url: https://testingcf.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/Custom_Direct_Classical_IP.yaml
     path: ./ruleset/Custom_Direct_Classical_IP.list
     behavior: classical
     interval: 86400
