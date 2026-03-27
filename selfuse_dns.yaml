@@ -63,19 +63,16 @@ proxy-groups:
     proxies:
       - 节点选择
       - 手动选择
-      - 省流节点
+      - 落地节点
       - 狮城节点
       - 香港节点
-      - 台湾节点
       - 日本节点
       - 美国节点
-      - 韩国节点
   - name: 油管视频
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/YouTube.png
     type: select
     proxies:
       - 节点选择
-      - 省流节点
       - 狮城节点
       - 香港节点
       - 台湾节点
@@ -96,6 +93,20 @@ proxy-groups:
       - 韩国节点
       - 落地节点
       - 手动选择
+  - name: TikTok
+    icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/TikTok_1.png
+    type: select
+    proxies:
+      - 节点选择
+      - 狮城节点
+      - 香港节点
+      - 台湾节点
+      - 日本节点
+      - 美国节点
+      - 韩国节点
+      - 落地节点
+      - 手动选择
+      - 省流节点
   - name: 巴哈姆特
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Bahamut.png
     type: select
@@ -103,6 +114,7 @@ proxy-groups:
       - 台湾节点
       - 落地节点
       - 节点选择
+      - 省流节点
       - 手动选择
   - name: Abema
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/AbemaTV.png
@@ -111,6 +123,7 @@ proxy-groups:
       - 日本节点
       - 落地节点
       - 节点选择
+      - 省流节点
       - 手动选择
   - name: 哔哩哔哩
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/bilibili.png
@@ -119,6 +132,7 @@ proxy-groups:
       - DIRECT
       - 台湾节点
       - 香港节点
+      - 省流节点
       - 落地节点
   - name: 谷歌FCM
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Google_Search.png
@@ -175,6 +189,7 @@ proxy-groups:
       - 韩国节点
       - 落地节点
       - 手动选择
+      - 省流节点
       - DIRECT
   - name: 国外媒体
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/ForeignMedia.png
@@ -189,17 +204,28 @@ proxy-groups:
       - 韩国节点
       - 落地节点
       - 手动选择
+      - 省流节点
       - DIRECT
   - name: 中继选择
     icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/Final.png
     type: select
-    include-all: true
+    proxies:
+      - 节点选择
+      - 美国节点
+      - 香港节点
+      - 台湾节点
+      - 狮城节点
+      - 日本节点
+      - 韩国节点
+      - 手动选择
+      - 省流节点
   - name: 🎯 全球直连
     type: select
     proxies:
       - DIRECT
       - 节点选择
       - 手动选择
+      - 省流节点
       - 落地节点
   - name: 漏网之鱼
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Final.png
@@ -244,11 +270,6 @@ proxy-groups:
     include-all: true
     filter: ^(?=.*((?i)(\s|-)0\.[0-9](×|x|X)|低倍率|省流|实验性(\d+)?\b))(?!.*((?i)(\s|-)(([1-9](\.\d+)?)(×|x|X))|落地|家宽|自建|校园|游戏|🎮|(\b(GAME)(\d+)?\b))).*$
     type: select
-  - name: 高级节点
-    icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/IEPL.png
-    include-all: true
-    filter: ^(?=.*((?i)(\s|-)(([1-9](\.\d+)?)(×|x|X))|专线|专用|高级|直连|急速|高倍率|AIA|CTM|CC|aia|ctm|cc|AC(\d+)?\b))(?!.*((?i)(\s|-)0\.[0-9](×|x|X)|低倍率|省流|大流量|落地|家宽|自建|回国|校园|游戏|🎮|(\b(GAME)(\d+)?\b))).*$
-    type: select
 
 rule-providers:
   SteamCN:
@@ -287,6 +308,7 @@ rules:
   - "GEOSITE,googlefcm,谷歌FCM"
   - "GEOSITE,youtube,油管视频"
   - "GEOSITE,google,节点选择"
+  - "GEOSITE,tiktok,TikTok"
   - "GEOSITE,microsoft,微软服务"
   - "GEOSITE,apple,苹果服务"
   - "GEOIP,telegram,电报消息,no-resolve"
