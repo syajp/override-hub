@@ -1,12 +1,34 @@
 geodata-mode: true 
-geodata-loader: memconservative
-geo-auto-update: true
-geo-update-interval: 24
 geox-url:
   geoip: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat
   geosite: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat
   mmdb: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country-lite.mmdb
   asn: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb
+profile:
+  store-selected: true
+  store-fake-ip: true
+sniffer:
+  enable: true
+  sniff:
+    HTTP:
+      ports: [80, 8080-8880]
+      override-destination: true
+    TLS:
+      ports: [443, 8443]
+    QUIC:
+      ports: [443, 8443]
+  skip-domain:
+    - "Mijia Cloud"
+    - "+.push.apple.com"
+tun:
+  enable: true
+  stack: mixed
+  dns-hijack:
+    - "any:53"
+    - "tcp://any:53"
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
 dns:
   enable: true
   prefer-h3: true
@@ -268,7 +290,11 @@ proxy-groups:
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Available_1.png
     include-all: true
     filter: ^(?=.*((?i)(\s|-)0\.[0-9](×|x|X)|低倍率|省流|实验性(\d+)?\b))(?!.*((?i)(\s|-)(([1-9](\.\d+)?)(×|x|X))|落地|家宽|自建|校园|游戏|🎮|(\b(GAME)(\d+)?\b))).*$
-    type: select
+    type: url-test
+    url: 'http://www.google.com/generate_204'
+    interval: 300
+    tolerance: 50
+    timeout: 5000
 
 rule-providers:
   SteamCN:
