@@ -293,7 +293,7 @@ proxy-groups:
     type: url-test
     url: 'http://www.google.com/generate_204'
     interval: 300
-    tolerance: 25
+    tolerance: 30
     timeout: 5000
 
 rule-providers:
