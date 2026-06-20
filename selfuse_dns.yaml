@@ -312,6 +312,8 @@ proxy-groups:
       - 韩国节点
       - 手动选择
       - 省流节点
+      - 98k
+      - 98k日本
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -362,6 +364,24 @@ proxy-groups:
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Available_1.png
     include-all: true
     filter: ^(?=.*((?i)(\s|-)0\.[0-9](×|x|X)|低倍率|省流|实验性(\d+)?\b))(?!.*((?i)(\s|-)(([1-9](\.\d+)?)(×|x|X))|落地|家宽|自建|校园|游戏|🎮|(\b(GAME)(\d+)?\b))).*$
+    type: url-test
+    url: 'http://www.google.com/generate_204'
+    interval: 300
+    tolerance: 30
+    timeout: 5000
+  - name: 98k
+    icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Available_1.png
+    include-all: true
+    filter: .*98k.*
+    type: url-test
+    url: 'http://www.google.com/generate_204'
+    interval: 300
+    tolerance: 50
+    timeout: 5000
+  - name: 98k日本
+    icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Available_1.png
+    include-all: true
+    filter: ^(?=.*98k)(?=.*日本).*$
     type: url-test
     url: 'http://www.google.com/generate_204'
     interval: 300
