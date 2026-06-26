@@ -386,13 +386,13 @@ rule-providers:
     format: text
     type: http
   Custom_Proxy:
-    url: https://raw.githubusercontent.com/syajp/override-hub/refs/heads/main/Custom_Proxy_Classical.yaml
+    url: https://raw.githubusercontent.com/syajp/override-hub/refs/heads/main/Custom_Proxy_Classical.list
     behavior: classical
     interval: 86400
     format: text
     type: http
   Custom_local:
-    url: https://raw.githubusercontent.com/syajp/override-hub/refs/heads/main/local.yaml
+    url: https://raw.githubusercontent.com/syajp/override-hub/refs/heads/main/local.list
     behavior: classical
     interval: 86400
     format: text
