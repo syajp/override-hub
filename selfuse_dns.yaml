@@ -391,6 +391,12 @@ rule-providers:
     interval: 86400
     format: text
     type: http
+  Custom_local:
+    url: https://raw.githubusercontent.com/syajp/override-hub/refs/heads/main/local.yaml
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
   Custom_Direct_Domain:
     url: https://api.asailor.org/Custom_OpenClash_Rules/main/rule/Custom_Direct_Domain.mrs
     behavior: domain
@@ -407,6 +413,7 @@ rules:
   - "RULE-SET,Custom_Proxy,手动选择"
   - "GEOSITE,private,全球直连"
   - "GEOIP,private,全球直连,no-resolve"
+  - "RULE-SET,Custom_local,落地节点"
   - "RULE-SET,Custom_Direct_Domain,全球直连"
   - "RULE-SET,Custom_Direct_IP,全球直连"
   - "RULE-SET,SteamCN,全球直连"
