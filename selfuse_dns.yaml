@@ -356,7 +356,7 @@ proxy-groups:
     type: url-test
     url: 'http://www.google.com/generate_204'
     interval: 300
-    tolerance: 30
+    tolerance: 50
     timeout: 5000
   - name: 98k
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Available_1.png
