@@ -436,6 +436,6 @@ rules:
   - "GEOIP,google,节点选择,no-resolve"
   - "GEOSITE,gfw,节点选择"
   - "GEOSITE,geolocation-!cn,🌍 国外域名"
-  - "GEOSITE,CN,DIRECT"
-  - "GEOIP,CN,DIRECT,no-resolve"
+  - "GEOSITE,cn,DIRECT"
+  - "GEOIP,cn,DIRECT,no-resolve"
   - "MATCH,漏网之鱼"
